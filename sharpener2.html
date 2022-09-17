@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // //call
+        // var addobj={num:2};
+        // var sum=function(a){
+        //     return this.num+a;
+        // };
+        // console.log(sum.call(addobj,5));
+
+        // //apply
+        // var addobj={num:2};
+        // var sum=function(a,b,c){
+        //     return this.num+a+b+c;
+        // };
+        // var array=[5,10,15];
+        // console.log(sum.apply(addobj,array))
+
+        // //bind
+        // var addobj={num:2};
+        // var sum=function(a,b,c){
+        //     return this.num+a+b+c;
+        // };
+        // // var array=[5,10,15];
+        // var bound=sum.bind(addobj);
+        // console.log(bound(5,10,15));
+        
+
+
+
+        // var student={
+        //     age:20
+        // }
+        // var Studentage=function(){
+        //     return this.age;
+        // }
+        // console.log(Studentage.call(student))
+
+
+        //currying by bind method
+        var multiply=function(x,y){
+            console.log(x*y)
+        }
+        var multiplyByTwo=multiply.bind(this,2); //x value
+        multiplyByTwo(3);//y value
+
+        var multiplyByThree=multiply.bind(this,3);//x value
+        multiplyByTwo(5); //y value
+
+         //currying by closure
+         var multiply=function(x){
+            return function(y){
+                console.log(x*y);
+            }
+        }
+        var multiplyByTwo=multiply(2); //x value
+        multiplyByTwo(3);//y value
+
+        var multiplyByThree=multiply(3); //x value
+        multiplyByThree(10);//y value
+
+
+
+    </script>
+</body>
+</html>
